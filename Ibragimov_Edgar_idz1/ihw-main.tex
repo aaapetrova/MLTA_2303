@@ -1,0 +1,67 @@
+\documentclass{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsthm,amsmath,amsfonts,amssymb}
+\usepackage{fullpage}
+\usepackage{eufrak}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{amsmath}
+\usepackage{icomma}
+
+%% Шрифты
+\usepackage{euscript}	 % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}	% сигнум
+\DeclareMathOperator{\cov}{\mathop{cov}}	% ковариация
+\DeclareMathOperator{\lb}{\mathop{lb}}	% бинарный логарифм (логарифм по основанию 2)
+\DeclareMathOperator{\supp}{\mathop{supp}}	% носитель
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}	% мнимая часть
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}	% вещественная часть
+
+\renewcommand{\Prob}{\mathbb P}	% вероятность
+\newcommand{\Expect}{\mathbb E}	% математическое ожидание
+\renewcommand{\Variance}{\mathbb D}	% дисперсия
+\newcommand{\Entropy}{\mathbb H}	% энтропия
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
+\RequirePackage{caption}
+\DeclareCaptionLabelSeparator{defffis}{ -- }
+\captionsetup{justification=centering,labelsep=defffis}
+
+\renewcommand{\qedsymbol}{}
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+\newtheorem*{problem}{Задание}
+
+\begin{document}
+	
+	\newcommand{\problemset}[1]{
+		\begin{center}
+			\Large #1
+		\end{center}
+	}
+	
+	\input{head.tex}  % в данном файле меняем только Пол, Фамилию Имя, № группы и № варианта
+	\input{ihw1.tex}  % для удобства создаём по аналогии файлы ihw1.tex, ihw2.tex, etc
+	                  % и просто меняем имя при компиляции
+\end{document}
